@@ -2,7 +2,7 @@ import { WebhookEvent } from "@clerk/nextjs/server";
 import { headers } from "next/headers";
 import { NextResponse } from "next/server";
 import { Webhook } from "svix";
-import { createUser } from "@/lib/actions/user.action";
+import { createUser, updateUserEmail } from "@/lib/actions/user.action";
 
 // Ensure WEBHOOK_SECRET is set
 const WEBHOOK_SECRET = process.env.WEBHOOK_SECRET;
@@ -41,7 +41,6 @@ export async function POST(req: Request) {
     console.error("Error verifying webhook:", err);
     return new Response("Error occurred during verification", { status: 400 });
   }
-      
 
   const { id } = evt.data;
   const eventType = evt.type;
@@ -49,13 +48,15 @@ export async function POST(req: Request) {
   if (eventType === "user.created") {
     const { id, email_addresses, image_url, first_name, last_name, username } = evt.data;
 
+    const email = email_addresses ? email_addresses[0].email_address : "unknown@example.com";
+
     const user = {
       clerkId: id,
-      email: email_addresses[0].email_address,
-      username: username!,
-      firstName: first_name,
-      lastName: last_name,
-      photo: image_url,
+      email: email,
+      username: username || "unknown",
+      firstName: first_name || "",
+      lastName: last_name || "",
+      photo: image_url || "",
     };
 
     try {
@@ -63,7 +64,6 @@ export async function POST(req: Request) {
       const newUser = await createUser(user);
 
       if (newUser) {
-        // Replace with Clerk's API endpoint and your API key
         await fetch(`https://api.clerk.dev/v1/users/${user.clerkId}`, {
           method: 'PATCH',
           headers: {
@@ -82,6 +82,26 @@ export async function POST(req: Request) {
     } catch (error) {
       console.error("Error creating user or updating metadata:", error);
       return new Response("Error occurred while processing user creation", { status: 500 });
+    }
+  }
+
+  if (eventType === "email.created") {
+    const { user_id, to_email_address } = evt.data;
+
+    // Ensure user_id and to_email_address are defined and of type string
+    if (!user_id || !to_email_address) {
+      console.error("Error: Missing user_id or to_email_address");
+      return new Response("Error occurred -- missing user details", { status: 400 });
+    }
+
+    try {
+      // Fetch the user from the database and update their email if necessary
+      const updatedUser = await updateUserEmail(user_id, to_email_address);
+
+      return NextResponse.json({ message: "User email updated", user: updatedUser });
+    } catch (error) {
+      console.error("Error updating user email:", error);
+      return new Response("Error occurred while updating user email", { status: 500 });
     }
   }
 
