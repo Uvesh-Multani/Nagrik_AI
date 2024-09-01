@@ -14,7 +14,6 @@ if (!WEBHOOK_SECRET) {
 const wh = new Webhook(WEBHOOK_SECRET);
 
 export async function POST(req: Request) {
-  // Get the headers
   const headerPayload = headers();
   const svix_id = headerPayload.get("svix-id");
   const svix_timestamp = headerPayload.get("svix-timestamp");
@@ -25,7 +24,6 @@ export async function POST(req: Request) {
     return new Response("Error occurred -- no svix headers", { status: 400 });
   }
 
-  // Get the body
   const payload = await req.json();
   const body = JSON.stringify(payload);
 
@@ -49,7 +47,6 @@ export async function POST(req: Request) {
     const { id, email_addresses, image_url, first_name, last_name, username } = evt.data;
 
     const email = email_addresses ? email_addresses[0].email_address : "unknown@example.com";
-
     const user = {
       clerkId: id,
       email: email,
@@ -88,16 +85,13 @@ export async function POST(req: Request) {
   if (eventType === "email.created") {
     const { user_id, to_email_address } = evt.data;
 
-    // Ensure user_id and to_email_address are defined and of type string
     if (!user_id || !to_email_address) {
       console.error("Error: Missing user_id or to_email_address");
       return new Response("Error occurred -- missing user details", { status: 400 });
     }
 
     try {
-      // Fetch the user from the database and update their email if necessary
       const updatedUser = await updateUserEmail(user_id, to_email_address);
-
       return NextResponse.json({ message: "User email updated", user: updatedUser });
     } catch (error) {
       console.error("Error updating user email:", error);
