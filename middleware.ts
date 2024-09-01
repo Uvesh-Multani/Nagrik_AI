@@ -8,7 +8,7 @@ const isPublicRoute = createRouteMatcher([
   '/privacy', // Add Privacy Policy as public
   '/term', 
   '/about',
-  '/api/webhooks/clerk'
+  '/api/webhooks/clerk',
 ]);
 
 // Middleware to protect routes
