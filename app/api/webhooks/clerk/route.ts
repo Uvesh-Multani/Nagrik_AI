@@ -41,6 +41,7 @@ export async function POST(req: Request) {
     console.error("Error verifying webhook:", err);
     return new Response("Error occurred during verification", { status: 400 });
   }
+      
 
   const { id } = evt.data;
   const eventType = evt.type;
