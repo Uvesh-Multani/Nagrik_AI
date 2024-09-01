@@ -22,7 +22,7 @@ export async function POST(req: Request) {
   
     if (!svix_id || !svix_timestamp || !svix_signature) {
       console.error("Error: Missing svix headers");
-      return NextResponse.json({ message: "Error occurred -- no svix headers" }, { status: 400 });
+      return new Response("Error occurred -- no svix headers", { status: 400 });
     }
   
     // Get the body
@@ -41,7 +41,7 @@ export async function POST(req: Request) {
       }) as WebhookEvent;
     } catch (err) {
       console.error("Error verifying webhook:", err);
-      return NextResponse.json({ message: "Error occurred during verification" }, { status: 400 });
+      return new Response("Error occurred during verification", { status: 400 });
     }
   
     const { id } = evt.data;
@@ -66,7 +66,7 @@ export async function POST(req: Request) {
         const newUser = await createUser(user);
   
         if (newUser) {
-          const response = await fetch(`https://api.clerk.dev/v1/users/${user.clerkId}`, {
+          await fetch(`https://api.clerk.dev/v1/users/${user.clerkId}`, {
             method: 'PATCH',
             headers: {
               'Authorization': `Bearer ${process.env.CLERK_SECRET_KEY}`,
@@ -78,21 +78,18 @@ export async function POST(req: Request) {
               },
             }),
           });
-  
-          if (!response.ok) {
-            throw new Error(`Failed to update Clerk user: ${response.statusText}`);
-          }
         }
   
         return NextResponse.json({ message: "New user created", user: newUser });
       } catch (error) {
         console.error("Error creating user or updating metadata:", error);
-        return NextResponse.json({ message: "Error occurred while processing user creation" }, { status: 500 });
+        return new Response("Error occurred while processing user creation", { status: 500 });
       }
     }
   
     console.log(`Webhook with an ID of ${id} and type of ${eventType}`);
     console.log("Webhook body:", body);
   
-    return NextResponse.json({}, { status: 200 });
+    return new Response("", { status: 200 });
   }
+  

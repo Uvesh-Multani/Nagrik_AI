@@ -9,7 +9,6 @@ export async function createUser(user: any) {
     const newUser = await User.create(user);
     return JSON.parse(JSON.stringify(newUser));
   } catch (error) {
-    console.error("Error creating user in MongoDB:", error);
-    throw error;
+    console.log(error);
   }
 }
