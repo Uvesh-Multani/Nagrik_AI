@@ -18,6 +18,33 @@ import { Empty } from "@/components/empty";
 import { cn } from "@/lib/utils";
 import { UserAvatar } from "@/components/user-avatar";
 import { BotAvatar } from "@/components/bot-avatar";
+import ReactMarkdown from 'react-markdown';
+
+// Define your ChatCompletionContentPart type if it's not already defined
+type ChatCompletionContentPart = {
+  type: string; // Define the type properly based on the structure of your data
+  text?: string; // Assuming parts may have text
+};
+
+const renderContent = (content: string | ChatCompletionContentPart[] | null | undefined): string => {
+  if (!content) {
+    return ""; // Return an empty string if content is null or undefined
+  }
+
+  if (Array.isArray(content)) {
+    return content.map((part) => {
+      if (typeof part === "string") {
+        return part;
+      } else if (part.type === "text" && part.text) {
+        return part.text;
+      }
+      // Handle other part types if necessary
+      return "";
+    }).join(""); // Join parts into a single string
+  }
+
+  return content;
+};
 
 const ConversationPage = () => {
   const router = useRouter();
@@ -48,7 +75,6 @@ const ConversationPage = () => {
 
       form.reset();
     } catch (error: any) {
-      //todo
       console.log(error);
     } finally {
       router.refresh();
@@ -77,7 +103,7 @@ const ConversationPage = () => {
                   <FormItem className="col-span-12 lg:col-span-10">
                     <FormControl className="m-0 p-0">
                       <Input
-                        className="border-0 outline-none focus ring-0 focus-visible:ring-transparent"
+                        className="border-0 outline-none focus:ring-0 focus-visible:ring-transparent"
                         disabled={isLoading}
                         placeholder="Ask anything you want..."
                         {...field}
@@ -105,27 +131,29 @@ const ConversationPage = () => {
             <Empty label="No conversation started." />
           )}
           <div className="flex flex-col-reverse gap-y-4">
-  {messages.map((message, index) => (
-    <div
-      key={index} // Use index if you don't have a unique id; ideally use a unique id from your data
-      className={cn(
-        "p-8 w-full flex items-start gap-x-8 rounded-lg",
-        message.role === "user"
-          ? "bg-white border border-black/10"
-          : "bg-muted"
-      )}
-    >
-      {message.role === "user" ? <UserAvatar /> : <BotAvatar />}
-      <p className="text-sm">
-        {/* Ensure message.content is renderable */}
-        {Array.isArray(message.content)
-          ? message.content.join(", ") // Convert array to string if it's an array of strings
-          : message.content}
-      </p>
-    </div>
-  ))}
-</div>
-
+            {messages.map((message, index) => (
+              <div
+                key={index}
+                className={cn(
+                  "p-8 w-full flex items-start gap-x-4 rounded-lg",
+                  message.role === "user"
+                    ? "bg-white border border-black/10"
+                    : "bg-muted"
+                )}
+              >
+                {message.role === "user" ? <UserAvatar /> : <BotAvatar />}
+                <div className="text-sm">
+                  {message.role === "user" ? (
+                    <p className="text-base mt-1 ml-2 leading-relaxed">{renderContent(message.content)}</p>
+                  ) : (
+                    <ReactMarkdown className="prose prose-sm p-2 ">
+                      {renderContent(message.content) as string}
+                    </ReactMarkdown>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>
