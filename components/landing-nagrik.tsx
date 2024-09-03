@@ -34,7 +34,7 @@ export const LandingNagrik = () => {
         </div>
       </div>
 
-      <div className="bg-[#fefefe] hover:bg-[#f4f1f1] shadow-sm p-8 rounded-lg text-black">
+      <div className="bg-[#fefefe] shadow-sm p-8 rounded-lg text-black">
         <h2 className="text-2xl font-bold text-center mb-4">Why NAGRIK AI?</h2>
         <p className="text-center text-sm md:text-base">
           Nagrik AI leverages cutting-edge AI technology to bring you the most
