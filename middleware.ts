@@ -8,6 +8,9 @@ const isPublicRoute = createRouteMatcher([
   '/privacy', // Add Privacy Policy as public
   '/term', 
   '/about',
+  '/contact', 
+  '/blog',
+  '/feedback',
   '/api/webhooks/clerk',
 ]);
 

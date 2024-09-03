@@ -22,6 +22,11 @@ const LandingLayout = ({ children }: { children: React.ReactNode }) => {
                       </a>
                     </li>
                     <li className="mb-4">
+                      <a href="/feedback" className=" hover:text-gray-500">
+                        Feedback
+                      </a>
+                    </li>
+                    <li className="mb-4">
                       <a href="/blog" className=" hover:text-gray-500">
                         Blog
                       </a>
@@ -44,12 +49,12 @@ const LandingLayout = ({ children }: { children: React.ReactNode }) => {
                       </a>
                     </li>
                     <li className="mb-4">
-                      <a href="https://www.linkedin.com/company/nagrikindia/" target="_blank" className=" hover:text-gray-500">
+                      <a href="https://www.linkedin.com/company/nagrik-ai/" target="_blank" className=" hover:text-gray-500">
                         LinkedIn
                       </a>
                     </li>
                     <li className="mb-4">
-                      <a href="/contactus" className=" hover:text-gray-500">
+                      <a href="/contact" className=" hover:text-gray-500">
                         Contact Us
                       </a>
                     </li>

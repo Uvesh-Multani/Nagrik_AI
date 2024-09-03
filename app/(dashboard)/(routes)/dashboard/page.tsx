@@ -13,8 +13,8 @@ const tools = [
   {
     label: "Conversation",
     icon: MessagesSquare,
-    color: "text-violet-500",
-    bgColor: "text-violet-500/10",
+    color: "text-[#8B4513]",
+    bgColor: "text-[#8B4513]",
     href: "/conversation",
   },
 ];
