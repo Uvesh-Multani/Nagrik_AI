@@ -11,7 +11,7 @@ export const LandingNagrik = () => {
           <h2 className="text-xl font-semibold mt-4">
             Trustworthy Information
           </h2>
-          <p className="text-sm text-zinc-400 mt-2">
+          <p className="text-sm mx-3 text-center text-zinc-400 mt-2">
             Accurate and up-to-date legal and civic data, ensuring that you stay
             informed with reliable content.
           </p>
@@ -19,7 +19,7 @@ export const LandingNagrik = () => {
         <div className="flex flex-col items-center text-center">
           <BookOpen className="h-12 w-12 text-orange-400" />
           <h2 className="text-xl font-semibold mt-4">Comprehensive Coverage</h2>
-          <p className="text-sm text-zinc-400 mt-2">
+          <p className="text-sm mx-3 text-center text-zinc-400 mt-2">
             Extensive information on laws, rights, and government schemes, all
             in one place.
           </p>
@@ -27,7 +27,7 @@ export const LandingNagrik = () => {
         <div className="flex flex-col items-center text-center">
           <Globe className="h-12 w-12 text-amber-500" />
           <h2 className="text-xl font-semibold mt-4">Nationwide Reach</h2>
-          <p className="text-sm text-zinc-400 mt-2">
+          <p className="text-sm mx-3 text-center text-zinc-400 mt-2">
             Serving citizens across India with region-specific information
             tailored to your needs.
           </p>
@@ -44,7 +44,7 @@ export const LandingNagrik = () => {
         </p>
       </div>
 
-      <div className="text-center text-sm md:text-base text-zinc-400">
+      <div className="text-center mx-3 text-sm md:text-base text-zinc-400">
         Trusted by thousands of users across India. Join the community and stay
         informed.
       </div>
