@@ -19,7 +19,7 @@ export const LandingHero = () => {
           </div>
         </div>
       </div>
-      <div className="text-sm md:text-xl font-light text-zinc-400">
+      <div className="text-sm md:text-xl text-center font-light text-zinc-400">
         Nagrik AI - AI-Powered Insights on Laws, Rights, and Regulations in India
       </div>
       <div>
