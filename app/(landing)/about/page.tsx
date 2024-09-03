@@ -9,7 +9,7 @@ const About = () => {
         <section className="py-16">
           <div className="container mx-auto px-4">
             <div className="text-center max-w-2xl mx-auto">
-              <h1 className="text-5xl font-bold text-gray-800 mb-6">About Nagrik AI</h1>
+              <h1 className="text-4xl font-bold text-gray-800 mb-6">About Nagrik AI</h1>
               <p className="text-gray-600">
                 NAGRIK AI is a specialized platform designed to empower Indian citizens by providing accurate and up-to-date information on laws, regulations, government schemes, constitutional rights, and legislative acts. Our mission is to make legal and civic information accessible to everyone, enabling citizens to make informed decisions and participate actively in the democratic process.
               </p>
