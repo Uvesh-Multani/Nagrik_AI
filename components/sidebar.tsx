@@ -18,13 +18,13 @@ const routes = [
     label: "Dashboard",
     icon: LayoutDashboard,
     href: "/dashboard",
-    color: "text-sky-600", // Adjusted for better contrast
+    color: "text-teal-600",
   },
   {
     label: "Conversation",
     icon: MessageSquare,
     href: "/conversation",
-    color: "text-[#8B4513]", // Adjusted for better contrast
+    color: "text-[#8B4513]", 
   },
 ];
 
