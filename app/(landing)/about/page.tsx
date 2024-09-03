@@ -1,4 +1,5 @@
 import { LandingNavbar } from "@/components/landing-navbar";
+import Image from "next/image";
 
 const About = () => {
   return (
@@ -53,10 +54,10 @@ const About = () => {
             </div>
             <div className="grid gap-8 md:grid-cols-2">
               <div className="relative">
-                <img className="w-full h-72 object-cover rounded-lg shadow-lg" src="a1.png" alt="Empowering Citizens" />
+                <Image className="w-full h-72 object-cover rounded-lg shadow-lg" src="a1.png" alt="Empowering Citizens" />
               </div>
               <div className="relative">
-                <img className="w-full h-72 object-cover rounded-lg shadow-lg" src="a2.png" alt="Information at Fingertips" />
+                <Image className="w-full h-72 object-cover rounded-lg shadow-lg" src="a2.png" alt="Information at Fingertips" />
               </div>
             </div>
           </div>
@@ -95,7 +96,7 @@ const About = () => {
               <div className=" rounded-lg p-8 bg-[#f6f5f5] border text-gray-800 hover:bg-[#f0ebeb] shadow-xl">
                 <h4 className="text-xl font-bold text-gray-800">Collaboration</h4>
                 <p className="text-gray-600 mt-2">
-                  Working together with citizens, government, and partners to enhance the platform's reach and impact.
+                  Working together with citizens, government, and partners to enhance the platform&apos;s reach and impact.
                 </p>
               </div>
               <div className="rounded-lg p-8 bg-[#f6f5f5] border text-gray-800 hover:bg-[#f0ebeb] shadow-xl">
@@ -118,21 +119,21 @@ const About = () => {
             </div>
             <div className="grid gap-5 md:grid-cols-3">
               <div className="flex flex-col items-center mt-8">
-                <img className="rounded-full h-28 w-28 shadow-lg" src="Uvesh.png" alt="Uvesh Multani" />
+                <Image className="rounded-full h-28 w-28 shadow-lg" src="Uvesh.png" alt="Uvesh Multani" />
                 <div className="mt-6 text-center">
                   <h5 className="text-xl font-bold text-gray-800">Uvesh Multani</h5>
                   <p className="text-gray-600">Co-founder & CEO</p>
                 </div>
               </div>
               <div className="flex flex-col items-center mt-8">
-                <img className="rounded-full h-28 w-28 shadow-lg" src="1.png" alt="Ansh Patel" />
+                <Image className="rounded-full h-28 w-28 shadow-lg" src="1.png" alt="Ansh Patel" />
                 <div className="mt-6 text-center">
                   <h5 className="text-xl font-bold text-gray-800">Ansh Patel</h5>
                   <p className="text-gray-600">Team Member</p>
                 </div>
               </div>
               <div className="flex flex-col items-center mt-8">
-                <img className="rounded-full h-28 w-28 shadow-lg" src="1.png" alt="Jemil Desai" />
+                <Image className="rounded-full h-28 w-28 shadow-lg" src="1.png" alt="Jemil Desai" />
                 <div className="mt-6 text-center">
                   <h5 className="text-xl font-bold text-gray-800">Jemil Desai</h5>
                   <p className="text-gray-600">Team Member</p>
