@@ -57,24 +57,24 @@ const DashboardPage = () => {
         ))}
       </div>
   
-      <div className="mt-28 text-gray-400 space-y-6 ">
+      <div className="mt-28 text-gray-500 space-y-6 ">
         <h3 className="text-xl md:text-2xl font-semibold text-center">Latest Updates</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <Card className="p-4 border border-gray-300 rounded-lg shadow-lg">
-            <h4 className="text-lg font-semibold text-gray-400">New Feature: AI Insights</h4>
-            <p className="text-sm text-gray-300 mt-2">
+            <h4 className="text-lg font-semibold text-gray-500">New Feature: AI Insights</h4>
+            <p className="text-sm text-gray-400 mt-2">
               We’ve added AI Insights to help you understand the impact of your interactions. Check it out and see how it can benefit you!
             </p>
           </Card>
-          <Card className="p-4 border border-gray-300 rounded-lg shadow-lg text-gray-400">
-            <h4 className="text-lg font-semibold text-gray-400">Performance Enhancements</h4>
-            <p className="text-sm text-gray-300 mt-2">
+          <Card className="p-4 border border-gray-300 rounded-lg shadow-lg">
+            <h4 className="text-lg font-semibold text-gray-500">Performance Enhancements</h4>
+            <p className="text-sm text-gray-400 mt-2">
               We’ve optimized the performance to ensure a smoother and faster experience. Enjoy the improved speed and efficiency.
             </p>
           </Card>
           <Card className="p-4 border border-gray-300 rounded-lg shadow-lg">
-            <h4 className="text-lg font-semibold text-gray-400">User Interface Improvements</h4>
-            <p className="text-sm text-gray-300 mt-2">
+            <h4 className="text-lg font-semibold text-gray-500">User Interface Improvements</h4>
+            <p className="text-sm text-gray-400 mt-2">
               Our user interface has been refreshed for better usability. Explore the new design and let us know your feedback!
             </p>
           </Card>
@@ -82,7 +82,7 @@ const DashboardPage = () => {
       </div>
   
       <div className="mt-12 space-y-6">
-        <h3 className="text-xl md:text-2xl font-semibold text-center text-gray-400">What Our Users Say</h3>
+        <h3 className="text-xl md:text-2xl font-semibold text-center text-gray-500">What Our Users Say</h3>
         <div className="space-y-4">
           <Card className="p-4 border border-gray-300 rounded-lg shadow-lg hover:bg-gray-100 text-gray-400">
             <p className="text-sm text-gray-400">
@@ -90,8 +90,8 @@ const DashboardPage = () => {
             </p>
             <div className="mt-2 text-right font-semibold">- Uvesh Multani</div>
           </Card>
-          <Card className="p-4 border border-gray-300 rounded-lg shadow-lg text-gray-400">
-            <p className="text-sm text-gray-400 hover:bg-gray-100">
+          <Card className="p-4 border border-gray-300 rounded-lg shadow-lg hover:bg-gray-100 text-gray-400">
+            <p className="text-sm text-gray-400 ">
               &quot;The new features are fantastic! I especially love the AI Insights. It’s been a game-changer for me.&quot;
             </p>
             <div className="mt-2 text-right font-semibold">- Ansh Patel</div>
@@ -104,7 +104,7 @@ const DashboardPage = () => {
           </Card>
         </div>
       </div>
-      <div className="mt-12 text-center text-sm text-gray-500">
+      <div className="mt-12 text-center text-sm text-gray-600">
         <div className="mb-4">
           <Link href="/privacy" className="hover:underline hover:text-gray-600">
             Privacy Policy
@@ -115,7 +115,7 @@ const DashboardPage = () => {
           </Link>
         </div>
         <div className="text-center text-xs text-gray-400">
-          &copy; {new Date().getFullYear()} <a href="/" ><span className="hover:underline hover:text-gray-600">Nagrik AI</span>™</a>. All rights reserved.
+          &copy; {new Date().getFullYear()} <a href="/" ><span className="hover:underline hover:text-gray-700">Nagrik AI</span>™</a>. All rights reserved.
         </div>
       </div>
     </div>
