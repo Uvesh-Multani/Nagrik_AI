@@ -16,25 +16,25 @@ const About = () => {
             </div>
 
             <div className="mt-16 grid gap-8 md:grid-cols-4 text-center">
-              <div className=" rounded-lg p-8 bg-[#f6f5f5] border text-gray-800 hover:bg-[#f0ebeb] shadow-xl">
+              <div className="rounded-lg p-8 bg-[#f6f5f5] border text-gray-800 hover:bg-[#f0ebeb] shadow-xl">
                 <h2 className="text-2xl font-bold text-gray-800">
                   <span className="text-blue-500">30+</span>
                 </h2>
                 <p className="text-gray-600 mt-2">Citizens Empowered</p>
               </div>
-              <div className=" rounded-lg p-8 bg-[#f6f5f5] border text-gray-800 hover:bg-[#f0ebeb] shadow-xl">
+              <div className="rounded-lg p-8 bg-[#f6f5f5] border text-gray-800 hover:bg-[#f0ebeb] shadow-xl">
                 <h2 className="text-2xl font-bold text-gray-800">
                   <span className="text-green-500">200+</span>
                 </h2>
                 <p className="text-gray-600 mt-2">Information Queries</p>
               </div>
-              <div className=" rounded-lg p-8 bg-[#f6f5f5] border text-gray-800 hover:bg-[#f0ebeb] shadow-xl">
+              <div className="rounded-lg p-8 bg-[#f6f5f5] border text-gray-800 hover:bg-[#f0ebeb] shadow-xl">
                 <h2 className="text-2xl font-bold text-gray-800">
                   <span className="text-yellow-500">5K+</span>
                 </h2>
                 <p className="text-gray-600 mt-2">Resources Available</p>
               </div>
-              <div className=" rounded-lg p-8 bg-[#f6f5f5] border text-gray-800 hover:bg-[#f0ebeb] shadow-xl">
+              <div className="rounded-lg p-8 bg-[#f6f5f5] border text-gray-800 hover:bg-[#f0ebeb] shadow-xl">
                 <h2 className="text-2xl font-bold text-gray-800">
                   <span className="text-red-500">200+</span>
                 </h2>
@@ -54,10 +54,22 @@ const About = () => {
             </div>
             <div className="grid gap-8 md:grid-cols-2">
               <div className="relative">
-                <Image className="w-full h-72 object-cover rounded-lg shadow-lg" src="a1.png" alt="Empowering Citizens" />
+                <Image 
+                  className="w-full h-72 object-cover rounded-lg shadow-lg" 
+                  src="/a1.png" 
+                  alt="Empowering Citizens" 
+                  width={500}  // Replace with actual width
+                  height={288} // Replace with actual height
+                />
               </div>
               <div className="relative">
-                <Image className="w-full h-72 object-cover rounded-lg shadow-lg" src="a2.png" alt="Information at Fingertips" />
+                <Image 
+                  className="w-full h-72 object-cover rounded-lg shadow-lg" 
+                  src="/a2.png" 
+                  alt="Information at Fingertips" 
+                  width={500}  // Replace with actual width
+                  height={288} // Replace with actual height
+                />
               </div>
             </div>
           </div>
@@ -75,13 +87,13 @@ const About = () => {
                   Ensuring that every citizen has easy access to vital information, regardless of their background or location.
                 </p>
               </div>
-              <div className=" rounded-lg p-8 bg-[#f6f5f5] border text-gray-800 hover:bg-[#f0ebeb] shadow-xl">
+              <div className="rounded-lg p-8 bg-[#f6f5f5] border text-gray-800 hover:bg-[#f0ebeb] shadow-xl">
                 <h4 className="text-xl font-bold text-gray-800">Empowerment</h4>
                 <p className="text-gray-600 mt-2">
                   Empowering individuals with the knowledge they need to exercise their rights and contribute to society.
                 </p>
               </div>
-              <div className=" rounded-lg p-8 bg-[#f6f5f5] border text-gray-800 hover:bg-[#f0ebeb] shadow-xl">
+              <div className="rounded-lg p-8 bg-[#f6f5f5] border text-gray-800 hover:bg-[#f0ebeb] shadow-xl">
                 <h4 className="text-xl font-bold text-gray-800">Innovation</h4>
                 <p className="text-gray-600 mt-2">
                   Continuously evolving to provide the most accurate and relevant information through cutting-edge technology.
@@ -93,7 +105,7 @@ const About = () => {
                   Committing to the highest standards in providing information and user experience.
                 </p>
               </div>
-              <div className=" rounded-lg p-8 bg-[#f6f5f5] border text-gray-800 hover:bg-[#f0ebeb] shadow-xl">
+              <div className="rounded-lg p-8 bg-[#f6f5f5] border text-gray-800 hover:bg-[#f0ebeb] shadow-xl">
                 <h4 className="text-xl font-bold text-gray-800">Collaboration</h4>
                 <p className="text-gray-600 mt-2">
                   Working together with citizens, government, and partners to enhance the platform&apos;s reach and impact.
@@ -117,29 +129,59 @@ const About = () => {
                 Our team is dedicated to making Nagrik AI the go-to platform for civic information in India.
               </p>
             </div>
-            <div className="grid gap-5 md:grid-cols-3">
+            <div className="grid gap-5 md:grid-cols-4">
               <div className="flex flex-col items-center mt-8">
-                <Image className="rounded-full h-28 w-28 shadow-lg" src="Uvesh.png" alt="Uvesh Multani" />
+                <Image 
+                  className="rounded-full h-28 w-28 shadow-lg" 
+                  src="/Uvesh.png" 
+                  alt="Uvesh Multani" 
+                  width={112}  // Replace with actual width
+                  height={112} // Replace with actual height
+                />
                 <div className="mt-6 text-center">
                   <h5 className="text-xl font-bold text-gray-800">Uvesh Multani</h5>
                   <p className="text-gray-600">Co-founder & CEO</p>
                 </div>
               </div>
               <div className="flex flex-col items-center mt-8">
-                <Image className="rounded-full h-28 w-28 shadow-lg" src="1.png" alt="Ansh Patel" />
+                <Image 
+                  className="rounded-full h-28 w-28 shadow-lg" 
+                  src="/1.png" 
+                  alt="Ansh Patel" 
+                  width={112}  // Replace with actual width
+                  height={112} // Replace with actual height
+                />
                 <div className="mt-6 text-center">
                   <h5 className="text-xl font-bold text-gray-800">Ansh Patel</h5>
                   <p className="text-gray-600">Team Member</p>
                 </div>
               </div>
               <div className="flex flex-col items-center mt-8">
-                <Image className="rounded-full h-28 w-28 shadow-lg" src="1.png" alt="Jemil Desai" />
+                <Image 
+                  className="rounded-full h-28 w-28 shadow-lg" 
+                  src="/1.png" 
+                  alt="Jemil Desai" 
+                  width={112}  
+                  height={112} 
+                />
                 <div className="mt-6 text-center">
                   <h5 className="text-xl font-bold text-gray-800">Jemil Desai</h5>
                   <p className="text-gray-600">Team Member</p>
                 </div>
               </div>
-              
+              <div className="flex flex-col items-center mt-8">
+                <Image 
+                  className="rounded-full h-28 w-28 shadow-lg" 
+                  src="/1.png" 
+                  alt="Jemil Desai" 
+                  width={112}  
+                  height={112} 
+                />
+                <div className="mt-6 text-center">
+                  <h5 className="text-xl font-bold text-gray-800">Param Desai</h5>
+                  <p className="text-gray-600">Team Member</p>
+                </div>
+              </div>
             </div>
           </div>
         </section>

@@ -7,7 +7,7 @@ const Testimonials = [
   {
     name: "Uvesh Multani",
     avatar: "/Uvesh.png",
-    title: "Data Analyst",
+    title: "Full Stack Developer",
     description: "As a Data Analyst, I've tried numerous tools to analyze and visualize data. However, this application stands out for its intuitive interface and powerful features. The data visualization options are incredibly versatile, allowing me to create detailed and insightful reports with ease. It has significantly boosted my productivity and provided actionable insights that have driven better decision-making in our projects. I highly recommend it to anyone in the data field who values efficiency and depth in data analysis.",
   },
   {
@@ -19,7 +19,7 @@ const Testimonials = [
   {
     name: "Jemil Desai",
     avatar: "/3.png",
-    title: "Full Stack Developer",
+    title: "Data Analyst",
     description: "Being a Full Stack Developer, I appreciate tools that can support both front-end and back-end development seamlessly. This application has proven to be a game-changer with its comprehensive feature set that covers all aspects of development. From robust debugging tools to efficient deployment options, it has streamlined many of my development processes. The customer support team is also highly responsive, which adds great value to the overall experience. If you're a developer looking for a versatile and reliable tool, this is it!",
   },
   {

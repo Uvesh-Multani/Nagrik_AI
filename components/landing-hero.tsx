@@ -14,7 +14,7 @@ export const LandingHero = () => {
           Empowering Indian Citizens with
         </h1>
         <div className="flex justify-center items-center">
-          <div className="bg-gradient-to-r from-amber-500 to-orange-400 bg-clip-text text-transparent">
+          <div className="bg-custom-gradient bg-clip-text text-transparent"> {/* bg-gradient-to-r from-amber-500 to-orange-400 */}
             <h1>AI-Generated Answers</h1>
           </div>
         </div>

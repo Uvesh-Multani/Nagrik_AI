@@ -27,8 +27,8 @@ const LandingLayout = ({ children }: { children: React.ReactNode }) => {
                       </a>
                     </li>
                     <li className="mb-4">
-                      <a href="/blog" className=" hover:text-gray-500">
-                        Blog
+                      <a href="/faq" className=" hover:text-gray-500">
+                        FAQ
                       </a>
                     </li>
                   </ul>

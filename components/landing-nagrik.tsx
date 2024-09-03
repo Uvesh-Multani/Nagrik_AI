@@ -17,7 +17,7 @@ export const LandingNagrik = () => {
           </p>
         </div>
         <div className="flex flex-col items-center text-center">
-          <BookOpen className="h-12 w-12 text-orange-400" />
+          <BookOpen className="h-12 w-12 text-gray-300" />  {/* orange */}
           <h2 className="text-xl font-semibold mt-4">Comprehensive Coverage</h2>
           <p className="text-sm mx-3 text-center text-zinc-400 mt-2">
             Extensive information on laws, rights, and government schemes, all
@@ -25,8 +25,8 @@ export const LandingNagrik = () => {
           </p>
         </div>
         <div className="flex flex-col items-center text-center">
-          <Globe className="h-12 w-12 text-amber-500" />
-          <h2 className="text-xl font-semibold mt-4">Nationwide Reach</h2>
+          <Globe className="h-12 w-12 text-green-500" />{/* amber */}
+          <h2 className="text-xl font-semibold mt-4">Nationwide Reach</h2> 
           <p className="text-sm mx-3 text-center text-zinc-400 mt-2">
             Serving citizens across India with region-specific information
             tailored to your needs.

@@ -21,13 +21,13 @@ export const LandingNavbar = () => {
         <div className="relative h-12 w-12 mr-4">
           <Image fill alt="Logo" src="/logo.png" />
         </div>
-        <h1 className={cn("text-3xl font-bold text-black", font.className)}>
+        <h1 className={cn("text-xl md:text-3xl font-bold text-black", font.className)}>
           Nagrik AI
         </h1>
       </Link>
       <div className="flex items-center gap-x-2">
         <Link href={isSignedIn ? "/dashboard" : "/sign-up"}>
-          <Button  className="rounded-full hover:bg-gray-700">
+          <Button className="rounded-full hover:bg-gray-600">
             Get Started
           </Button>
         </Link>

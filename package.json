@@ -25,7 +25,7 @@
     "clsx": "^2.1.1",
     "lucide-react": "^0.436.0",
     "mongodb": "^6.8.0",
-    "mongoose": "^8.6.0",
+    "mongoose": "^8.6.1",
     "next": "14.2.6",
     "openai": "^4.56.0",
     "prisma": "^5.19.0",
