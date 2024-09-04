@@ -1,3 +1,5 @@
+"use server";
+
 import User from "@/lib/modals/user.modal";
 import { connect } from "@/lib/db";
 
@@ -7,7 +9,6 @@ export async function createUser(user: any) {
     const newUser = await User.create(user);
     return JSON.parse(JSON.stringify(newUser));
   } catch (error) {
-    console.error("Error creating user:", error);
-    throw new Error("Error creating user");
+    console.log(error);
   }
 }
