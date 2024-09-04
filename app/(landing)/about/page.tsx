@@ -140,13 +140,13 @@ const About = () => {
                 />
                 <div className="mt-6 text-center">
                   <h5 className="text-xl font-bold text-gray-800">Uvesh Multani</h5>
-                  <p className="text-gray-600">Co-founder & CEO</p>
+                  <p className="text-gray-600">Team Member</p>
                 </div>
               </div>
               <div className="flex flex-col items-center mt-8">
                 <Image 
                   className="rounded-full h-28 w-28 shadow-lg" 
-                  src="/1.png" 
+                  src="/Ansh.jpg" 
                   alt="Ansh Patel" 
                   width={112}  // Replace with actual width
                   height={112} // Replace with actual height
@@ -159,7 +159,7 @@ const About = () => {
               <div className="flex flex-col items-center mt-8">
                 <Image 
                   className="rounded-full h-28 w-28 shadow-lg" 
-                  src="/1.png" 
+                  src="/Jemil.jpg" 
                   alt="Jemil Desai" 
                   width={112}  
                   height={112} 
@@ -172,8 +172,8 @@ const About = () => {
               <div className="flex flex-col items-center mt-8">
                 <Image 
                   className="rounded-full h-28 w-28 shadow-lg" 
-                  src="/1.png" 
-                  alt="Jemil Desai" 
+                  src="/Param.jpg" 
+                  alt="Param Desai" 
                   width={112}  
                   height={112} 
                 />
