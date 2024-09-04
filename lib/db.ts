@@ -12,15 +12,24 @@ let cached: MongooseConn = (global as any).mongoose || { conn: null, promise: nu
 export const connect = async () => {
   if (cached.conn) return cached.conn;
 
-  cached.promise =
-    cached.promise ||
-    mongoose.connect(MONGODB_URL, {
+  if (!cached.promise) {
+    cached.promise = mongoose.connect(MONGODB_URL, {
       dbName: "Nagrik AI",
       bufferCommands: false,
       connectTimeoutMS: 30000,
+    }).then((mongoose) => {
+      cached.conn = mongoose;
+      return mongoose;
     });
+  }
 
-  cached.conn = await cached.promise;
+  try {
+    cached.conn = await cached.promise;
+  } catch (error) {
+    cached.promise = null; // Reset the cached promise in case of an error
+    console.error("Error connecting to MongoDB:", error);
+    throw error;
+  }
 
   return cached.conn;
 };

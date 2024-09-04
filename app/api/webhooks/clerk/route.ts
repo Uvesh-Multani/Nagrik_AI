@@ -14,6 +14,7 @@ if (!WEBHOOK_SECRET) {
 const wh = new Webhook(WEBHOOK_SECRET);
 
 export async function POST(req: Request) {
+  // Get the headers
   const headerPayload = headers();
   const svix_id = headerPayload.get("svix-id");
   const svix_timestamp = headerPayload.get("svix-timestamp");
@@ -21,13 +22,17 @@ export async function POST(req: Request) {
 
   if (!svix_id || !svix_timestamp || !svix_signature) {
     console.error("Error: Missing svix headers");
-    return new Response("Error occurred -- no svix headers", { status: 400 });
+    return new Response("Error occurred -- missing svix headers", { status: 400 });
   }
 
+  // Get the body
   const payload = await req.json();
   const body = JSON.stringify(payload);
 
+  console.log("Webhook Payload:", payload);
+
   let evt: WebhookEvent;
+
   try {
     evt = wh.verify(body, {
       "svix-id": svix_id,
@@ -39,8 +44,11 @@ export async function POST(req: Request) {
     return new Response("Error occurred during verification", { status: 400 });
   }
 
-  if (evt.type === "user.created") {
+  const eventType = evt.type;
+
+  if (eventType === "user.created") {
     const { id, email_addresses, image_url, first_name, last_name, username } = evt.data;
+
     const email = email_addresses ? email_addresses[0].email_address : "unknown@example.com";
 
     const user = {
@@ -57,7 +65,7 @@ export async function POST(req: Request) {
       const newUser = await createUser(user);
 
       if (newUser) {
-        await fetch(`https://api.clerk.dev/v1/users/${user.clerkId}`, {
+        const response = await fetch(`https://api.clerk.dev/v1/users/${user.clerkId}`, {
           method: 'PATCH',
           headers: {
             'Authorization': `Bearer ${process.env.CLERK_SECRET_KEY}`,
@@ -69,6 +77,10 @@ export async function POST(req: Request) {
             },
           }),
         });
+
+        if (!response.ok) {
+          console.error("Failed to update Clerk metadata:", response.statusText);
+        }
       }
 
       return NextResponse.json({ message: "New user created", user: newUser });
@@ -78,5 +90,6 @@ export async function POST(req: Request) {
     }
   }
 
+  console.log(`Unhandled webhook with ID: ${evt.data.id} and type: ${eventType}`);
   return new Response("", { status: 200 });
 }
