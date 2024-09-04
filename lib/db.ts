@@ -15,7 +15,7 @@ export const connect = async () => {
   cached.promise =
     cached.promise ||
     mongoose.connect(MONGODB_URL, {
-      dbName: "clerk-next14-db",
+      dbName: "Nagrik AI",
       bufferCommands: false,
       connectTimeoutMS: 30000,
     });
