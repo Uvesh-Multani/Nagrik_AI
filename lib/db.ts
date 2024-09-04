@@ -7,14 +7,7 @@ interface MongooseConn {
   promise: Promise<Mongoose> | null;
 }
 
-let cached: MongooseConn = (global as any).mongoose;
-
-if (!cached) {
-  cached = (global as any).mongoose = {
-    conn: null,
-    promise: null,
-  };
-}
+let cached: MongooseConn = (global as any).mongoose || { conn: null, promise: null };
 
 export const connect = async () => {
   if (cached.conn) return cached.conn;
@@ -22,7 +15,7 @@ export const connect = async () => {
   cached.promise =
     cached.promise ||
     mongoose.connect(MONGODB_URL, {
-      dbName: "clerk-next14-db",
+      dbName: "Nagrik AI",
       bufferCommands: false,
       connectTimeoutMS: 30000,
     });
