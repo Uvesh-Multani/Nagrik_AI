@@ -29,8 +29,8 @@ export async function POST(req: Request) {
     const payload = await req.json();
     const body = JSON.stringify(payload);
   
-    console.log("Webhook Payload:", payload);
-  
+    console.log("Received webhook payload:", JSON.stringify(payload, null, 2));
+
     let evt: WebhookEvent;
   
     try {
@@ -44,12 +44,16 @@ export async function POST(req: Request) {
       return new Response("Error occurred during verification", { status: 400 });
     }
   
+    console.log("Webhook event type:", evt.type);
+  
     const { id } = evt.data;
     const eventType = evt.type;
   
     if (eventType === "user.created") {
       const { id, email_addresses, image_url, first_name, last_name, username } = evt.data;
   
+      console.log("Processing user.created event for user ID:", id);
+
       const email = email_addresses ? email_addresses[0].email_address : "unknown@example.com";
   
       const user = {
@@ -62,11 +66,12 @@ export async function POST(req: Request) {
       };
   
       try {
-        console.log("Creating user in MongoDB:", user);
+        console.log("Attempting to create user:", user);
         const newUser = await createUser(user);
-  
+        console.log("User created in MongoDB:", newUser);
+
         if (newUser) {
-          await fetch(`https://api.clerk.dev/v1/users/${user.clerkId}`, {
+          const response = await fetch(`https://api.clerk.dev/v1/users/${user.clerkId}`, {
             method: 'PATCH',
             headers: {
               'Authorization': `Bearer ${process.env.CLERK_SECRET_KEY}`,
@@ -78,6 +83,12 @@ export async function POST(req: Request) {
               },
             }),
           });
+
+          if (!response.ok) {
+            const errorMessage = await response.text();
+            console.error("Failed to update Clerk user metadata:", errorMessage);
+            throw new Error(`Failed to update Clerk user metadata: ${response.statusText}`);
+          }
         }
   
         return NextResponse.json({ message: "New user created", user: newUser });
@@ -91,5 +102,4 @@ export async function POST(req: Request) {
     console.log("Webhook body:", body);
   
     return new Response("", { status: 200 });
-  }
-
+}

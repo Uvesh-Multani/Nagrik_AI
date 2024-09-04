@@ -26,7 +26,7 @@ export const connect = async () => {
   try {
     cached.conn = await cached.promise;
   } catch (error) {
-    cached.promise = null; // Reset the cached promise in case of an error
+    cached.promise = null;  // Reset the cached promise in case of an error
     console.error("Error connecting to MongoDB:", error);
     throw error;
   }
