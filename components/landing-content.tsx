@@ -2,33 +2,35 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import Image from 'next/image';
+import { Button } from "./ui/button";
 
 const Testimonials = [
   {
-    name: "Uvesh Multani",
-    avatar: "/Uvesh.png",
-    title: "Full Stack Developer",
-    description: "Being a Full Stack Developer, I appreciate tools that can support both front-end and back-end development seamlessly. This application has proven to be a game-changer with its comprehensive feature set that covers all aspects of development. From robust debugging tools to efficient deployment options, it has streamlined many of my development processes. The customer support team is also highly responsive, which adds great value to the overall experience. If you're a developer looking for a versatile and reliable tool, this is it!",
+    name: "Ravi Kumar",
+    avatar: "/1.png",
+    title: "Government Employee",
+    description: "As a government employee, I often need to stay updated on new regulations and procedures. This application has been invaluable in providing accurate and timely information. The user-friendly interface and comprehensive coverage of laws and regulations have made it easier for me to perform my duties efficiently. It has become an essential tool for navigating the complexities of government work.",
   },
   {
-    name: "Ansh Patel",
-    avatar: "/Ansh.jpg",
-    title: "Web Developer",
-    description: "As a Web Developer, I’m always on the lookout for tools that can streamline my workflow and enhance my coding efficiency. This application has become an essential part of my development toolkit. Its seamless integration with various development environments and its range of customization options have made it easier to manage projects and collaborate with my team. The user interface is sleek and modern, and the application’s performance is top-notch. It has certainly raised the bar for what I expect from development tools.",
+    name: "Aarti Sharma",
+    avatar: "/2.png",
+    title: "Small Business Owner",
+    description: "Running a small business comes with numerous legal and regulatory challenges. This application has simplified compliance by offering clear and accessible information on various business regulations. The guidance provided has helped me ensure that my business adheres to all legal requirements, which has saved me time and reduced the risk of non-compliance.",
   },
   {
-    name: "Jemil Desai",
-    avatar: "/Jemil.jpg",
-    title: "Data Analyst",
-    description: "As a Data Analyst, I've tried numerous tools to analyze and visualize data. However, this application stands out for its intuitive interface and powerful features. The data visualization options are incredibly versatile, allowing me to create detailed and insightful reports with ease. It has significantly boosted my productivity and provided actionable insights that have driven better decision-making in our projects. I highly recommend it to anyone in the data field who values efficiency and depth in data analysis.",
+    name: "Rajesh Patel",
+    avatar: "/3.png",
+    title: "College Student",
+    description: "As a college student, I often need to understand my rights and responsibilities, especially when it comes to student-related issues. This application has been a great resource for learning about my rights and accessing relevant information quickly. The detailed explanations and examples have helped me make informed decisions and better understand my position in various situations.",
   },
   {
-    name: "Param Desai",
-    avatar: "/Param.jpg",
-    title: "Data Analyst",
-    description: "This application has been a revelation for me as a Data Analyst. It offers advanced analytics features that are both powerful and user-friendly. The real-time data processing capabilities have allowed me to perform complex analyses and generate comprehensive reports without any hassle. The application's ability to handle large datasets efficiently has saved me countless hours of work. It’s a must-have for any professional looking to take their data analysis to the next level.",
+    name: "Sneha Iyer",
+    avatar: "/4.png",
+    title: "Social Activist",
+    description: "In my work as a social activist, having access to accurate and detailed information on laws and regulations is crucial. This application has provided me with essential insights into legal frameworks and social justice issues. Its comprehensive resources have supported my advocacy efforts and enabled me to educate others effectively about their rights and legal options.",
   },
 ];
+
 
 export const LandingContent = () => {
   return (
@@ -66,6 +68,8 @@ export const LandingContent = () => {
           </Card>
         ))}
       </div>
+
+     
     </div>
   );
 };

@@ -4,6 +4,7 @@ import { LandingContent } from "@/components/landing-content";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { LandingNagrik } from "@/components/landing-nagrik";
+import { Subscribe } from "@/components/subscribe";
 
 const LandingPage = () => {
   return (
@@ -12,6 +13,7 @@ const LandingPage = () => {
       <LandingHero />
       <LandingNagrik />
       <LandingContent />
+      <Subscribe /> 
     </div>
     
   );

@@ -94,6 +94,11 @@ const LandingLayout = ({ children }: { children: React.ReactNode }) => {
                       Nagrik Chat
                     </a>
                   </li>
+                  <li className="mb-4">
+                    <a href="https://nagrik-ai-newsletter.beehiiv.com/subscribe" target="_blank" className=" hover:text-gray-500">
+                      Subscribe Us
+                    </a>
+                  </li>
                 </ul>
               </div>
             </div>

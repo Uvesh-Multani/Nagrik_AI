@@ -24,6 +24,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/(landing)/faq/page.jsx", "app/(landing)/feedback/page.jsx", "app/(landing)/layout.tsx", "app/(landing)/page.tsx", "app/(landing)/privacy/page.tsx", "app/(landing)/term/page.tsx", "app/api/conversation/route.ts", "app/api/webhooks/clerk/route.ts", "lib/utils.ts", "lib/db.ts", "lib/modals/user.modal.ts", "lib/actions/user.action.ts", "middleware.ts", "components/bot-avatar.tsx", "components/empty.tsx", "components/heading.jsx", "components/landing-content.tsx", "components/landing-hero.tsx", "components/landing-nagrik.tsx", "components/landing-navbar.tsx", "components/loader.tsx", "components/mobile-sidebar.tsx", "components/navbar.tsx", "components/sidebar.tsx", "components/user-avatar.tsx"],
   "exclude": ["node_modules"]
 }
