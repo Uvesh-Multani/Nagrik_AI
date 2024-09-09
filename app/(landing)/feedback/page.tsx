@@ -99,8 +99,19 @@ const Feedback = () => {
               </Button>
             </div>
           </form>
+          
         </div>
       </div>
+      <div className="flex items-center justify-center ">
+      <a
+        href="https://docs.google.com/forms/d/e/1FAIpQLScl3saR75nKCu7CnyKrzbQ0kBg-7QsofvrUysdpOaJ2aDiM3g/viewform?usp=sf_link"
+        target="_blank" // Opens the link in a new tab
+        rel="noopener noreferrer" // Security improvement when opening new tab
+        className="inline-block text-center px-6 py-3 text-white bg-orange-500 hover:bg-orange-600 font-semibold rounded-lg shadow-md"
+      >
+        Click Here
+      </a>
+    </div>
     </div>
   );
 };
