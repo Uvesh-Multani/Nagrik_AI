@@ -88,19 +88,19 @@ const DashboardPage = () => {
             <p className="text-sm text-gray-400">
               &quot;Nagrik AI has transformed the way I interact with technology. The tools are incredibly intuitive and powerful.&quot;
             </p>
-            <div className="mt-2 text-right font-semibold">- Uvesh Multani</div>
+            <div className="mt-2 text-right font-semibold">- Srutik Nandadiya</div>
           </Card>
           <Card className="p-4 border border-gray-300 rounded-lg shadow-lg hover:bg-gray-100 text-gray-400">
             <p className="text-sm text-gray-400 ">
               &quot;The new features are fantastic! I especially love the AI Insights. It’s been a game-changer for me.&quot;
             </p>
-            <div className="mt-2 text-right font-semibold">- Ansh Patel</div>
+            <div className="mt-2 text-right font-semibold">- Rohit Rathod</div>
           </Card>
           <Card className="p-4 border border-gray-300 rounded-lg shadow-lg hover:bg-gray-100 text-gray-400">
             <p className="text-sm text-gray-400">
               &quot;Great updates and improvements! The performance enhancements are noticeable, and the UI looks great.&quot;
             </p>
-            <div className="mt-2 text-right font-semibold">- Jemil Desai</div>
+            <div className="mt-2 text-right font-semibold">- Aditi Pawase</div>
           </Card>
         </div>
       </div>
