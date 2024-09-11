@@ -1,8 +1,7 @@
 import { LandingHero } from "@/components/landing-hero";
 import { LandingNavbar } from "@/components/landing-navbar";
 import { LandingContent } from "@/components/landing-content";
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
+
 import { LandingNagrik } from "@/components/landing-nagrik";
 import { Subscribe } from "@/components/subscribe";
 import Script from "next/script";  // Import Script from next/script
@@ -16,6 +15,7 @@ const LandingPage = () => {
       <LandingContent />
       <Subscribe />
 
+      {/* External script to load Chatbot */}
       <Script
         id="chatbot-config"
         strategy="afterInteractive"
