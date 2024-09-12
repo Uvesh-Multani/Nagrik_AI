@@ -6,28 +6,28 @@ import { Button } from "@/components/ui/button";
 import { CheckCircle, XCircle } from "lucide-react"; // Icons for success/error messages
 
 const Feedback = () => {
-  // States to manage form inputs and submission status
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
-  const [submitted, setSubmitted] = useState(false);
-  const [error, setError] = useState(false);
+  // // States to manage form inputs and submission status
+  // const [name, setName] = useState("");
+  // const [email, setEmail] = useState("");
+  // const [message, setMessage] = useState("");
+  // const [submitted, setSubmitted] = useState(false);
+  // const [error, setError] = useState(false);
 
-  // Handle form submission
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+  // // Handle form submission
+  // const handleSubmit = (e: React.FormEvent) => {
+  //   e.preventDefault();
 
-    // Simulating form submission
-    if (name && email && message) {
-      setSubmitted(true);
-      setError(false);
-      setName("");
-      setEmail("");
-      setMessage("");
-    } else {
-      setError(true);
-    }
-  };
+  //   // Simulating form submission
+  //   if (name && email && message) {
+  //     setSubmitted(true);
+  //     setError(false);
+  //     setName("");
+  //     setEmail("");
+  //     setMessage("");
+  //   } else {
+  //     setError(true);
+  //   }
+  // };
 
   return (
     <div className="h-full">
@@ -36,7 +36,7 @@ const Feedback = () => {
         <h1 className="text-4xl font-extrabold text-center mb-12 text-gray-800">
           We Value Your Feedback
         </h1>
-        <div className="max-w-lg mx-auto bg-white shadow-lg rounded-lg p-8">
+        {/* <div className="max-w-lg mx-auto bg-white shadow-lg rounded-lg p-8">
           {submitted && !error && (
             <div className="mb-6 flex items-center justify-center space-x-2">
               <CheckCircle className="text-green-500 h-6 w-6" />
@@ -100,7 +100,7 @@ const Feedback = () => {
             </div>
           </form>
           
-        </div>
+        </div> */}
       </div>
       <div className="flex items-center justify-center ">
       <a
