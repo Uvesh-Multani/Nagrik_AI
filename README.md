@@ -4,6 +4,7 @@
 Welcome to **Nagrik AI**, a revolutionary platform designed to harness the power of artificial intelligence for [main purpose or feature of the project]. This repository contains everything you need to build, deploy, and contribute to the Nagrik AI platform.
 
 ---
+(./video.mp4)
 
 ## 🌟 Key Features
 
