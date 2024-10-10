@@ -6,7 +6,8 @@ Welcome to **Nagrik AI**, a revolutionary platform designed to harness the power
 ---
 ## Video Demo
 
-[![Video Thumbnail](path_to_thumbnail_image.png)](./video.mp4)
+[Watch the video](https://github.com/username/repository-name/raw/main/video.mp4)
+
 
 
 ## 🌟 Key Features
