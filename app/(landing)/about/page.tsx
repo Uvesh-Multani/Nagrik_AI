@@ -172,13 +172,13 @@ const About = () => {
               <div className="flex flex-col items-center mt-8">
                 <Image 
                   className="rounded-full h-28 w-28 shadow-lg" 
-                  src="/Param.jpg" 
-                  alt="Param Desai" 
+                  src="/1.png" 
+                  alt="Arsh Memon" 
                   width={112}  
                   height={112} 
                 />
                 <div className="mt-6 text-center">
-                  <h5 className="text-xl font-bold text-gray-800">Param Desai</h5>
+                  <h5 className="text-xl font-bold text-gray-800">Arsh Memon</h5>
                   <p className="text-gray-600">Team Member</p>
                 </div>
               </div>
