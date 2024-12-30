@@ -5,30 +5,30 @@ import { LandingNavbar } from "@/components/landing-navbar";
 import { Button } from "@/components/ui/button";
 import { CheckCircle, XCircle } from "lucide-react"; // Icons for success/error messages
 
-// Load environment variables
-if (typeof window === "undefined") {
-  require("dotenv").config();
-}
-
 const Feedback = () => {
+  // States to manage form inputs and submission status
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState(false);
 
+  // Handle form submission
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
+    // Check if all fields are filled
     if (name && email && message) {
+      // Form data to send to Web3Forms API or any other API
       const formData = {
-        access_key: process.env.WEB3FORMS_ACCESS_KEY, // Use environment variable
+        access_key: "fd0c66e5-b9d3-4d12-a24e-6e54ec7fd249", // Replace with your Web3Forms API key
         name,
         email,
         message,
       };
 
       try {
+        // Send the data to the API
         const response = await fetch("https://api.web3forms.com/submit", {
           method: "POST",
           headers: {
@@ -47,15 +47,18 @@ const Feedback = () => {
           setEmail("");
           setMessage("");
         } else {
+          // Handle error from API (if any)
           setError(true);
           setSubmitted(false);
         }
       } catch (error) {
+        // Handle any network errors
         console.error("Error submitting form:", error);
         setError(true);
         setSubmitted(false);
       }
     } else {
+      // Handle missing fields
       setError(true);
     }
   };
