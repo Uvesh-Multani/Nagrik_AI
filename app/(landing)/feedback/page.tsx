@@ -6,28 +6,62 @@ import { Button } from "@/components/ui/button";
 import { CheckCircle, XCircle } from "lucide-react"; // Icons for success/error messages
 
 const Feedback = () => {
-  // // States to manage form inputs and submission status
-  // const [name, setName] = useState("");
-  // const [email, setEmail] = useState("");
-  // const [message, setMessage] = useState("");
-  // const [submitted, setSubmitted] = useState(false);
-  // const [error, setError] = useState(false);
+  // States to manage form inputs and submission status
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState(false);
 
-  // // Handle form submission
-  // const handleSubmit = (e: React.FormEvent) => {
-  //   e.preventDefault();
+  // Handle form submission
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
 
-  //   // Simulating form submission
-  //   if (name && email && message) {
-  //     setSubmitted(true);
-  //     setError(false);
-  //     setName("");
-  //     setEmail("");
-  //     setMessage("");
-  //   } else {
-  //     setError(true);
-  //   }
-  // };
+    // Check if all fields are filled
+    if (name && email && message) {
+      // Form data to send to Web3Forms API or any other API
+      const formData = {
+        access_key: "fd0c66e5-b9d3-4d12-a24e-6e54ec7fd249", // Replace with your Web3Forms API key
+        name,
+        email,
+        message,
+      };
+
+      try {
+        // Send the data to the API
+        const response = await fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify(formData),
+        });
+
+        const result = await response.json();
+
+        if (result.success) {
+          setSubmitted(true);
+          setError(false);
+          setName("");
+          setEmail("");
+          setMessage("");
+        } else {
+          // Handle error from API (if any)
+          setError(true);
+          setSubmitted(false);
+        }
+      } catch (error) {
+        // Handle any network errors
+        console.error("Error submitting form:", error);
+        setError(true);
+        setSubmitted(false);
+      }
+    } else {
+      // Handle missing fields
+      setError(true);
+    }
+  };
 
   return (
     <div className="h-full">
@@ -36,7 +70,7 @@ const Feedback = () => {
         <h1 className="text-4xl font-extrabold text-center mb-12 text-gray-800">
           We Value Your Feedback
         </h1>
-        {/* <div className="max-w-lg mx-auto bg-white shadow-lg rounded-lg p-8">
+        <div className="max-w-lg mx-auto bg-white shadow-lg rounded-lg p-8">
           {submitted && !error && (
             <div className="mb-6 flex items-center justify-center space-x-2">
               <CheckCircle className="text-green-500 h-6 w-6" />
@@ -99,19 +133,8 @@ const Feedback = () => {
               </Button>
             </div>
           </form>
-          
-        </div> */}
+        </div>
       </div>
-      <div className="flex items-center justify-center ">
-      <a
-        href="https://docs.google.com/forms/d/e/1FAIpQLScl3saR75nKCu7CnyKrzbQ0kBg-7QsofvrUysdpOaJ2aDiM3g/viewform?usp=sf_link"
-        target="_blank" // Opens the link in a new tab
-        rel="noopener noreferrer" // Security improvement when opening new tab
-        className="inline-block text-center px-6 py-3 text-white bg-orange-500 hover:bg-orange-600 font-semibold rounded-lg shadow-md"
-      >
-        Click Here
-      </a>
-    </div>
     </div>
   );
 };
