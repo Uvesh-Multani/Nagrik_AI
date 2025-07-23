@@ -572,7 +572,7 @@ We explored how:
 
 This system ensures that Nagrik AI is not just a website, but a truly interactive and knowledgeable guide for Indian civic information.
 
-Next, we'll shift our focus to how Nagrik AI manages users themselves – how you log in, how your profile is handled, and what options you have for personalization in [Chapter 3: User Authentication & Profiles](03_user_authentication___profiles_.md).
+Next, we'll shift our focus to how Nagrik AI manages users themselves – how you log in, how your profile is handled, and what options you have for personalization in [Chapter 3: User Authentication & Profiles](#chapter-3-user-authentication--profiles).
 
 # Chapter 3: User Authentication & Profiles
 
@@ -714,7 +714,7 @@ Let's look at the simplified code that integrates Clerk into Nagrik AI.
 
 ### 1. The Global Setup: `app/layout.tsx`
 
-For Clerk to work across our entire application, its main "provider" needs to wrap everything. This happens in the main `app/layout.tsx` file, which is the "Root Layout" for the whole website (as we learned in [Chapter 1: Frontend Page Routing & Layouts](01_frontend_page_routing___layouts_.md)).
+For Clerk to work across our entire application, its main "provider" needs to wrap everything. This happens in the main `app/layout.tsx` file, which is the "Root Layout" for the whole website (as we learned in [Chapter 1: Frontend Page Routing & Layouts](#chapter-1-frontend-page-routing--layouts)).
 
 ```tsx
 // app/layout.tsx (simplified)
