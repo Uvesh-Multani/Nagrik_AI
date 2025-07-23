@@ -180,7 +180,7 @@ const DasshBoardLayout =({
 
 export default DasshBoardLayout;
 ```
-**Explanation:** Once you're logged into Nagrik AI, you'll always see a sidebar on the left and a navbar at the top. This `DasshBoardLayout` provides that consistent look and feel for all your personal dashboard pages. It wraps around specific pages like the main dashboard or the [AI Conversation System](02_ai_conversation_system_.md) page, providing a unified user experience.
+**Explanation:** Once you're logged into Nagrik AI, you'll always see a sidebar on the left and a navbar at the top. This `DasshBoardLayout` provides that consistent look and feel for all your personal dashboard pages. It wraps around specific pages like the main dashboard or the [AI Conversation System](#chapter-2-ai-conversation-system) page, providing a unified user experience.
 
 #### Landing Page: `app/(landing)/page.tsx`
 
@@ -320,15 +320,12 @@ This fundamental architecture ensures that Nagrik AI is not just a collection of
 
 Next, we'll dive into one of the core features of Nagrik AI: how users can have intelligent conversations with our AI system. Get ready to explore the brains behind the platform!
 
-[Next Chapter: AI Conversation System](02_ai_conversation_system_.md)
 
 ---
 
-<sub><sup>**References**: [[1]](https://github.com/Uvesh-Multani/Nagrik_AI/blob/b94397e52c18739bbcb37e46e852e7e281b00740/app/(auth)/layout.tsx), [[2]](https://github.com/Uvesh-Multani/Nagrik_AI/blob/b94397e52c18739bbcb37e46e852e7e281b00740/app/(dashboard)/(routes)/dashboard/page.tsx), [[3]](https://github.com/Uvesh-Multani/Nagrik_AI/blob/b94397e52c18739bbcb37e46e852e7e281b00740/app/(dashboard)/layout.tsx), [[4]](https://github.com/Uvesh-Multani/Nagrik_AI/blob/b94397e52c18739bbcb37e46e852e7e281b00740/app/(landing)/page.tsx), [[5]](https://github.com/Uvesh-Multani/Nagrik_AI/blob/b94397e52c18739bbcb37e46e852e7e281b00740/app/layout.tsx)</sup></sub>
-
 # Chapter 2: AI Conversation System
 
-Welcome back to our journey through Nagrik AI! In [Chapter 1: Frontend Page Routing & Layouts](01_frontend_page_routing___layouts_.md), we learned how Nagrik AI organizes its digital space, guiding you seamlessly from one section to another and ensuring a consistent look and feel across different parts of the website. Think of it like a well-designed building with clear hallways and consistent room layouts.
+Welcome back to our journey through Nagrik AI! In [Chapter 1: Frontend Page Routing & Layouts](#chapter-1-frontend-page-routing--layouts), we learned how Nagrik AI organizes its digital space, guiding you seamlessly from one section to another and ensuring a consistent look and feel across different parts of the website. Think of it like a well-designed building with clear hallways and consistent room layouts.
 
 Now, it's time to explore the *brain* of our Nagrik AI platform: the **AI Conversation System**. This is where the real magic happens – where you can ask questions about Indian laws, government, and history, and get intelligent, relevant answers.
 
@@ -415,7 +412,7 @@ Let's look at the simplified code that makes this happen. We'll explore two main
 
 ### 1. The Frontend: `app/(dashboard)/(routes)/conversation/page.tsx`
 
-This file is responsible for the user interface of the conversation page. Remember from [Chapter 1: Frontend Page Routing & Layouts](01_frontend_page_routing___layouts_.md), this page lives inside the `(dashboard)` route group, meaning it will always have the consistent sidebar and navbar around it.
+This file is responsible for the user interface of the conversation page. Remember from [Chapter 1: Frontend Page Routing & Layouts](#chapter-1-frontend-page-routing--layouts), this page lives inside the `(dashboard)` route group, meaning it will always have the consistent sidebar and navbar around it.
 
 Here's how it handles sending your message:
 
@@ -577,15 +574,9 @@ This system ensures that Nagrik AI is not just a website, but a truly interactiv
 
 Next, we'll shift our focus to how Nagrik AI manages users themselves – how you log in, how your profile is handled, and what options you have for personalization in [Chapter 3: User Authentication & Profiles](03_user_authentication___profiles_.md).
 
-[Next Chapter: User Authentication & Profiles](03_user_authentication___profiles_.md)
-
----
-
-<sub><sup>**References**: [[1]](https://github.com/Uvesh-Multani/Nagrik_AI/blob/b94397e52c18739bbcb37e46e852e7e281b00740/app/(dashboard)/(routes)/conversation/constants.ts), [[2]](https://github.com/Uvesh-Multani/Nagrik_AI/blob/b94397e52c18739bbcb37e46e852e7e281b00740/app/(dashboard)/(routes)/conversation/page.tsx), [[3]](https://github.com/Uvesh-Multani/Nagrik_AI/blob/b94397e52c18739bbcb37e46e852e7e281b00740/app/api/conversation/route.ts)</sup></sub>
-
 # Chapter 3: User Authentication & Profiles
 
-Welcome back to our journey through Nagrik AI! In [Chapter 2: AI Conversation System](02_ai_conversation_system_.md), we explored the "brain" of Nagrik AI, understanding how it processes your questions and provides specialized answers about Indian civic information. We saw how complex AI models work behind the scenes to give you accurate insights.
+Welcome back to our journey through Nagrik AI! In [Chapter 2: AI Conversation System](#chapter-2-ai-conversation-system), we explored the "brain" of Nagrik AI, understanding how it processes your questions and provides specialized answers about Indian civic information. We saw how complex AI models work behind the scenes to give you accurate insights.
 
 Now, let's talk about *you* – the user. How do you get access to this powerful AI? How does Nagrik AI know who you are and keep your information safe? This chapter is all about the "security guard" and "personal registry" of our application: **User Authentication & Profiles**.
 
@@ -699,7 +690,7 @@ sequenceDiagram
 
 1.  **Initial Visit & Sign Up:**
     *   You visit Nagrik AI's homepage. When you click "Sign Up," your browser requests the `/sign-up` page from the Nagrik AI server.
-    *   The Nagrik AI server uses its layouts (the `RootLayout` and `AuthLayout` we saw in [Chapter 1: Frontend Page Routing & Layouts](01_frontend_page_routing___layouts_.md)) to wrap the content.
+    *   The Nagrik AI server uses its layouts (the `RootLayout` and `AuthLayout` we saw in [Chapter 1: Frontend Page Routing & Layouts](#chapter-1-frontend-page-routing--layouts)) to wrap the content.
     *   Crucially, the "page content" for `/sign-up` is actually a pre-built Sign Up form provided by Clerk. This form is sent to your browser.
     *   When you fill out the form and submit it, your browser sends your registration details *directly* to Clerk. Clerk handles all the secure storage of your password and user data in its own system (which integrates with Nagrik AI's database for user IDs).
     *   Once registered, Clerk tells your browser to redirect you to the `/dashboard` page, and also provides an authentication "token" that proves you're now logged in.
@@ -850,17 +841,12 @@ In this chapter, we've explored the critical role of **User Authentication & Pro
 
 By outsourcing complex security tasks to Clerk, Nagrik AI can focus on delivering its core value: intelligent civic information.
 
-Next, we'll shift our focus to the simpler, non-interactive pages of Nagrik AI, like "Privacy Policy" or "About Us," in [Chapter 4: Static Content Pages](04_static_content_pages_.md).
+Next, we'll shift our focus to the simpler, non-interactive pages of Nagrik AI, like "Privacy Policy" or "About Us," in [Chapter 4: Static Content Pages](#chapter-4-static-content-pages).
 
-[Next Chapter: Static Content Pages](04_static_content_pages_.md)
-
----
-
-<sub><sup>**References**: [[1]](https://github.com/Uvesh-Multani/Nagrik_AI/blob/b94397e52c18739bbcb37e46e852e7e281b00740/app/(auth)/(routes)/sign-in/[[...sign-in]]/page.tsx), [[2]](https://github.com/Uvesh-Multani/Nagrik_AI/blob/b94397e52c18739bbcb37e46e852e7e281b00740/app/(auth)/(routes)/sign-up/[[...sign-up]]/page.tsx), [[3]](https://github.com/Uvesh-Multani/Nagrik_AI/blob/b94397e52c18739bbcb37e46e852e7e281b00740/app/(dashboard)/(routes)/settings/[[...settings]]/page.tsx), [[4]](https://github.com/Uvesh-Multani/Nagrik_AI/blob/b94397e52c18739bbcb37e46e852e7e281b00740/app/layout.tsx), [[5]](https://github.com/Uvesh-Multani/Nagrik_AI/blob/b94397e52c18739bbcb37e46e852e7e281b00740/middleware.ts)</sup></sub>
 
 # Chapter 4: Static Content Pages
 
-Welcome back to our journey through Nagrik AI! In [Chapter 3: User Authentication & Profiles](03_user_authentication___profiles_.md), we learned how Nagrik AI securely manages user accounts, from signing up to personalizing your profile. We saw how a dedicated service like Clerk handles the complex task of proving who you are, keeping your information safe.
+Welcome back to our journey through Nagrik AI! In [Chapter 3: User Authentication & Profiles](#chapter-3-user-authentication--profiles), we learned how Nagrik AI securely manages user accounts, from signing up to personalizing your profile. We saw how a dedicated service like Clerk handles the complex task of proving who you are, keeping your information safe.
 
 Now, let's explore a different kind of page on the Nagrik AI platform – pages that are not about your personal dashboard or AI conversations. These are like the "information brochures" or "guidebooks" of the Nagrik AI platform: **Static Content Pages**.
 
@@ -909,7 +895,7 @@ These interactive elements enhance the user experience without making the core c
 
 ### 3. Leveraging Layouts from Chapter 1
 
-Just like our dynamic pages (homepage, dashboard), static content pages still benefit from the **Layouts** we discussed in [Chapter 1: Frontend Page Routing & Layouts](01_frontend_page_routing___layouts_.md). This ensures a consistent look and feel across the entire website. For our static content pages, they typically use the `LandingNavbar` to maintain a unified public-facing appearance.
+Just like our dynamic pages (homepage, dashboard), static content pages still benefit from the **Layouts** we discussed in [Chapter 1: Frontend Page Routing & Layouts](#chapter-1-frontend-page-routing--layouts). This ensures a consistent look and feel across the entire website. For our static content pages, they typically use the `LandingNavbar` to maintain a unified public-facing appearance.
 
 ## How it All Works Together: Displaying a Static Page
 
@@ -989,7 +975,7 @@ const About = () => {
 export default About;
 ```
 **Explanation:**
-*   **`LandingNavbar`**: This component, defined in `src/components/landing-navbar.tsx` (a [Reusable UI Component](05_reusable_ui_components_.md)), ensures the navigation bar at the top of the page is consistent with the rest of the public site.
+*   **`LandingNavbar`**: This component, defined in `src/components/landing-navbar.tsx` (a [Reusable UI Component](#chapter-5-reusable-ui-components)), ensures the navigation bar at the top of the page is consistent with the rest of the public site.
 *   **Content Sections**: The rest of the page is purely content (`h1`, `p` tags, `div`s for layout and styling) along with images. There's no data being fetched, no user input logic, just information presented in a structured way.
 
 ### 2. "Frequently Asked Questions" (FAQ) Page (`app/(landing)/faq/page.tsx`)
@@ -1179,21 +1165,16 @@ In this chapter, we've explored **Static Content Pages** within Nagrik AI. You'v
 We saw how:
 *   These pages deliver **fixed content** to all visitors.
 *   They can still include **client-side interactivity** like accordions or forms, even though their core information is static.
-*   They consistently use the **layouts** from [Chapter 1: Frontend Page Routing & Layouts](01_frontend_page_routing___layouts_.md) to maintain a unified brand appearance.
+*   They consistently use the **layouts** from [Chapter 1: Frontend Page Routing & Layouts](#chapter-1-frontend-page-routing--layouts) to maintain a unified brand appearance.
 
 By using static content pages, Nagrik AI ensures that important, foundational information is always available and clearly presented, contributing to a trustworthy and user-friendly experience.
 
 Next, we'll dive deeper into how Nagrik AI builds these consistent looks and feels across different pages by creating shared building blocks called **Reusable UI Components**.
 
-[Next Chapter: Reusable UI Components](05_reusable_ui_components_.md)
-
----
-
-<sub><sup>**References**: [[1]](https://github.com/Uvesh-Multani/Nagrik_AI/blob/b94397e52c18739bbcb37e46e852e7e281b00740/app/(landing)/about/page.tsx), [[2]](https://github.com/Uvesh-Multani/Nagrik_AI/blob/b94397e52c18739bbcb37e46e852e7e281b00740/app/(landing)/faq/page.tsx), [[3]](https://github.com/Uvesh-Multani/Nagrik_AI/blob/b94397e52c18739bbcb37e46e852e7e281b00740/app/(landing)/feedback/page.tsx), [[4]](https://github.com/Uvesh-Multani/Nagrik_AI/blob/b94397e52c18739bbcb37e46e852e7e281b00740/app/(landing)/privacy/page.tsx), [[5]](https://github.com/Uvesh-Multani/Nagrik_AI/blob/b94397e52c18739bbcb37e46e852e7e281b00740/app/(landing)/term/page.tsx)</sup></sub>
 
 # Chapter 5: Reusable UI Components
 
-Welcome back to our journey through Nagrik AI! In [Chapter 4: Static Content Pages](04_static_content_pages_.md), we explored how Nagrik AI presents fixed information like its "About Us" and "Privacy Policy" pages, ensuring important details are always accessible. We even saw how layouts provide a consistent header across these public pages.
+Welcome back to our journey through Nagrik AI! In [Chapter 4: Static Content Pages](#chapter-4-static-content-pages), we explored how Nagrik AI presents fixed information like its "About Us" and "Privacy Policy" pages, ensuring important details are always accessible. We even saw how layouts provide a consistent header across these public pages.
 
 Now, let's dive deeper into how Nagrik AI achieves that consistent look and feel, not just with layouts, but with smaller, more granular pieces. Imagine you're building with Lego blocks. You don't build every single brick from scratch each time, right? You use pre-made blocks. That's exactly what **Reusable UI Components** are in web development!
 
@@ -1522,4 +1503,3 @@ This chapter concludes our journey through the Nagrik AI tutorial. We've covered
 
 ---
 
-<sub><sup>**References**: [[1]](https://github.com/Uvesh-Multani/Nagrik_AI/blob/b94397e52c18739bbcb37e46e852e7e281b00740/app/(dashboard)/(routes)/conversation/page.tsx), [[2]](https://github.com/Uvesh-Multani/Nagrik_AI/blob/b94397e52c18739bbcb37e46e852e7e281b00740/app/(dashboard)/(routes)/dashboard/page.tsx), [[3]](https://github.com/Uvesh-Multani/Nagrik_AI/blob/b94397e52c18739bbcb37e46e852e7e281b00740/components/ui/avatar.tsx), [[4]](https://github.com/Uvesh-Multani/Nagrik_AI/blob/b94397e52c18739bbcb37e46e852e7e281b00740/components/ui/button.tsx), [[5]](https://github.com/Uvesh-Multani/Nagrik_AI/blob/b94397e52c18739bbcb37e46e852e7e281b00740/components/ui/card.tsx), [[6]](https://github.com/Uvesh-Multani/Nagrik_AI/blob/b94397e52c18739bbcb37e46e852e7e281b00740/components/ui/form.tsx), [[7]](https://github.com/Uvesh-Multani/Nagrik_AI/blob/b94397e52c18739bbcb37e46e852e7e281b00740/components/ui/input.tsx), [[8]](https://github.com/Uvesh-Multani/Nagrik_AI/blob/b94397e52c18739bbcb37e46e852e7e281b00740/components/ui/sheet.tsx)</sup></sub>
